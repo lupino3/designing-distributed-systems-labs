@@ -135,7 +135,6 @@ The following NGINX configuration file will send 90% of the requests to main web
     }
     
     server {
-    
 	    location / {
 	    	proxy_pass http://backend;
 	    }
@@ -152,12 +151,11 @@ In a working folder of your choice, create a ```conf.d``` sub-folder. Then creat
 
 
     upstream backend {
-    	server web-deployment:80 weight=9;
+	    server web-deployment:80 weight=9;
 	    server experiment-deployment:80;
     }
     
-    server {
-    
+    server {  
 	    location / {
 	    	proxy_pass http://backend;
 	    }
